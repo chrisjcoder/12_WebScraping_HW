@@ -93,8 +93,6 @@ def scrape():
    browser.quit()
    return mars_data
    
-
    # Store mars_data into MongoDB
 
-   # Dependencies
 
