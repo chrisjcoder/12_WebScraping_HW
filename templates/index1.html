@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="style.css">
+  <!-- <style type="text/css">
+
+  /* .jumbotron{
+    margin-top:20px;
+    background-image: url_for('static', filename='mission_to_mars.jpg');
+    background-size:cover;
+    color:white;
+  } */
+
+</style> -->
+  
+  
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="jumbotron"></div>
+      <h1 class="display-3 text-center font-weight-bolder">Mission to Mars</h1>
+      <br>
+      <div class="text-center">
+        <a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card border-0">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <h2 class="text-left">Latest Mars News</h2>
+            <h5 class="text-left">{{mars_data.news_title}}</h5>
+            <p class="card-text">{{mars_data.news_p}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="card border-0">
+          <div class="card-body">
+            <h2 class="card-title">Featured Mars Image</h2>
+            <img src="{{mars_data.feature_image_url}}" alt="Feature Image" class="img-responsive"style="width:45rem;">
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card2">
+          <div class="card-body">
+            <!-- <h2 class="card-title">Visualizations</h2>
+          <hr> -->
+            <!-- <div class="container"> -->
+            <div class="row">
+              <div class="col-md-12">
+                <!-- <h3 class="text-left">Current Weather on Mars</h3> -->
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Current Weather on Mars</h5>
+                    <p class="card-text small">{{mars_data.mars_weather}}</p>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-12">
+                  <!-- <h3 class="text-left">Mars Facts</h3> -->
+                  <div class="card border-0">
+                    <div class="card-body">
+                      <h5 class="card-title">Mars Facts</h5>
+                      <div class="small">{{mars_data.mars_table | safe}}</div>
+                      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <h2>Mars Hemispheres</h2>
+        <hr>
+        <div class="card-deck">
+          
+          <div class="col-md-12">
+            <div class="row">
+              {% for hems in mars_data.hemisphere_image_urls %}
+              <div class="col-md-6">
+                <div class="card text">
+                  <img class="card-img-top" src="{{ hems.img_url }}" />
+                  <div class="card-body">
+                    <h4 class="card-text text-left">{{hems.title }}</h4>
+                    <hr>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
