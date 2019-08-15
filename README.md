@@ -1,8 +1,12 @@
 # Mission to Mars- Homework Submission
 
+The screenshots are from Chrome at 75% zoom level to emcompass entire viewport.
+
 ![Final Web Page 1](Final_M2M_page1.png)
 
-In this assignment, you will build a web application that scrapes various websites for data related to the Mission to Mars and displays the information in a single HTML page. The following outlines what you need to do.
+![Final Web Page 2](Final_M2M_page2.png)
+
+Completed this assignment:
 
 ## Step 1 - Scraping
 
