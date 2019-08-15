@@ -6,7 +6,6 @@
   <title>Mission to Mars</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
@@ -18,11 +17,6 @@
     crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="style.css">
- 
-  </style>
-
-
-
 
 </head>
 
@@ -37,7 +31,7 @@
       </div>
     </div>
   </div>
-</div>
+  </div>
 
   <div class="container">
     <div class="row">
@@ -60,19 +54,15 @@
         <div class="card border-0">
           <div class="card-body">
             <h2 class="card-title">Featured Mars Image</h2>
-            <img src="{{mars_data.feature_image_url}}" alt="Feature Image" class="img-responsive"style="width:45rem;">
+            <img src="{{mars_data.feature_image_url}}" alt="Feature Image" class="img-responsive" style="width:45rem;">
           </div>
         </div>
       </div>
       <div class="col-lg-4">
         <div class="card2">
           <div class="card-body">
-            <!-- <h2 class="card-title">Visualizations</h2>
-          <hr> -->
-            <!-- <div class="container"> -->
             <div class="row">
               <div class="col-md-12">
-                <!-- <h3 class="text-left">Current Weather on Mars</h3> -->
                 <div class="card">
                   <div class="card-body">
                     <h5 class="card-title">Current Weather on Mars</h5>
@@ -83,13 +73,10 @@
               <br>
               <div class="row">
                 <div class="col-md-12">
-                  <!-- <h3 class="text-left">Mars Facts</h3> -->
                   <div class="card border-0">
                     <div class="card-body">
                       <h5 class="card-title">Mars Facts</h5>
                       <div class="small">{{mars_data.mars_table | safe}}</div>
-                      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <a href="#" class="btn btn-primary">Go somewhere</a> -->
                     </div>
                   </div>
                 </div>
@@ -103,7 +90,6 @@
         <h2>Mars Hemispheres</h2>
         <hr>
         <div class="card-deck">
-          
           <div class="col-md-12">
             <div class="row">
               {% for hems in mars_data.hemisphere_image_urls %}
